@@ -26,10 +26,10 @@ pool.on('connect', () => {
 
 pool.on('error', (err) => console.log(err));
 
-const redis = require('redis');
-const REDIS_PORT = process.env.REDIS_PORT;
-
-const path = require('path');
+// const redis = require('redis');
+// const REDIS_PORT = process.env.REDIS_PORT;
+//
+// const path = require('path');
 
 
 
@@ -216,24 +216,24 @@ app.listen(PORT, () => {
     console.log('Proxy server up and listening on port ' + PORT)
 });
 
-const client = redis.createClient('6379','127.0.0.1');
-
-client.on('connect', function() {
-    console.log('Redis client connected');
-});
-
-client.on('error', function (err) {
-    console.log('Something went wrong ' + err);
-});
-
-client.set('my test key', 'my test value', redis.print);
-client.get('my test key', function (error, result) {
-    if (error) {
-        console.log(error);
-        throw error;
-    }
-    console.log('GET result ->' + result);
-});
+// const client = redis.createClient('6379','127.0.0.1');
+//
+// client.on('connect', function() {
+//     console.log('Redis client connected');
+// });
+//
+// client.on('error', function (err) {
+//     console.log('Something went wrong ' + err);
+// });
+//
+// client.set('my test key', 'my test value', redis.print);
+// client.get('my test key', function (error, result) {
+//     if (error) {
+//         console.log(error);
+//         throw error;
+//     }
+//     console.log('GET result ->' + result);
+// });
 
 
 
