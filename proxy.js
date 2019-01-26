@@ -8,10 +8,13 @@ require('newrelic');
 const redis = require('redis');
 const REDIS_PORT = process.env.REDIS_PORT;
 
+import path from 'path';
+
 const app = express();
 const client = redis.createClient('6379','127.0.0.1');
 
-app.use(express.static(__dirname + '/../client/dist'));
+app.use(express.static(path.join(__dirname, './../client/dist')));
+
 const PORT = 3000;
 
 app.use(bodyParser.json());
